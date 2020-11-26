@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+:root {
+  --Moderateviolet: hsl(263, 55%, 52%);
+  --Verydarkgrayishblue: hsl(217, 19%, 35%);
+  --Verydarkblackishblue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+  --Lightgray: hsl(0, 0%, 81%);
+  --Lightgrayishblue: hsl(210, 46%, 95%);
+}
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  /* align-self: center;
+  min-height: 100vh; */
+  background: var(--Lightgrayishblue);
+  box-shadow: -20px 20px 60px #252525, 20px -20px 60px #313131;
+}
+
+.container {
+  position: absolute;
+  max-width: 70%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, 2fr));
+  grid-template-rows: minmax(250px, auto);
+  margin: 0px;
+  grid-auto-flow: dense;
+  grid-gap: 2rem;
+  top: 0;
+  left: 0;
+  transform: translate(20%, 30%);
+  margin-bottom: 4rem;
+}
+
+.container .box {
+  position: relative;
+  padding: 30px;
+  padding-top: 5rem;
+  display: grid;
+  font-size: 13px;
+  font-weight: 500;
+  place-items: center;
+  text-align: left;
+  color: #fff;
+  transition: 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px #0000004d;
+}
+.container .box:hover {
+  background: #47484a;
+  box-shadow: 0px 8px 15px #0000004d;
+}
+.info-container {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 1.5rem 2rem;
+}
+.name-container {
+  display: block;
+  margin: 0.5rem 0px 0px 0.5rem;
+}
+.name-container p {
+  font-weight: 400;
+}
+.name-container p:nth-child(1) {
+  letter-spacing: 2px;
+}
+.name-container p:nth-child(2) {
+  color: var(--Lightgray);
+}
+.info-container img {
+  border-radius: 50%;
+  width: 2.5rem;
+  height: auto;
+  border: 2px solid var(--Lightgray);
+}
+
+.container .box:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 1;
+  background: var(--Moderateviolet);
+}
+.quotes {
+  position: absolute;
+  top: 0.5rem;
+  right: 5rem;
+  opacity: 0.5;
+  z-index: 0;
+}
+.container .box:nth-child(1) .info-container img {
+  border: 2px solid var(--Lightgrayishblue) !important;
+}
+.container .box:nth-child(2) {
+  grid-column: span 1;
+  grid-row: span 1;
+  background: var(--Verydarkgrayishblue);
+}
+.container .box:nth-child(3) {
+  grid-column: span 1;
+  grid-row: span 6;
+  background: var(--White);
+  color: var(--Verydarkgrayishblue);
+}
+
+.container .box:nth-child(4) {
+  grid-column: span 1;
+  grid-row: span 5;
+  height: 100%;
+  background: var(--White);
+  color: var(--Verydarkgrayishblue);
+}
+
+.container .box:nth-child(5) {
+  grid-column: span 2;
+  grid-row: span 5;
+  height: 100%;
+  background: var(--Verydarkblackishblue);
+  color: var(--White);
+}
+.container .box:nth-child(5) .info-container img {
+  border: 2px solid var(--Moderateviolet) !important;
+}
+.container .box:nth-child(5) p:nth-child(2) {
+  color: var(--Lightgray);
+  font-weight: 100;
+}
+.content {
+  z-index: 2;
+}
+.content h3 {
+  font-size: 1.2rem;
+  font-weight: 600px;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+.content p {
+  line-height: 1.5;
+}
+@media (max-width: 1472px) {
+  .container {
+    position: absolute;
+    max-width: 80%;
+    transform: translate(12%, 20%);
+  }
+}
+@media (max-width: 1289px) {
+  .container {
+    position: absolute;
+    max-width: 90%;
+    transform: translate(5%, 20%);
+  }
+}
+
+@media (max-width: 1146px) {
+  .container {
+    width: 90%;
+    max-width: initial;
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    grid-template-rows: minmax(auto, auto);
+    transform: translate(0%, 0%);
+    margin: 2rem 0rem 2rem 3rem;
+  }
+  .container .box {
+    grid-column: unset !important;
+    grid-row: unset !important;
+  }
+  .container .box:nth-child(4) {
+    grid-column: span 1;
+    grid-row: span 5;
+    height: initial;
+  }
+
+  .container .box:nth-child(5) {
+    grid-column: span 2;
+    grid-row: span 5;
+    height: initial;
+    margin-bottom: 5rem;
+  }
+}
+@media (max-width: 750px) {
+  .container {
+    margin: 2rem 0rem 2rem 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    margin: 2rem 0rem 2rem 1rem;
+  }
+  .quotes {
+    right: 2rem;
+  }
+}
